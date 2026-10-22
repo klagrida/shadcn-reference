@@ -1,21 +1,32 @@
-# TanStack Start + shadcn/ui
+# shadcn-reference
 
-This is a template for a new TanStack Start project with React, TypeScript, and shadcn/ui.
+The latest [shadcn/ui](https://ui.shadcn.com), generated — the reference that
+[semantic-components](https://github.com/gridatek/semantic-components) compares
+its styles against.
 
-## Adding components
+- **TanStack Start**, **Base UI** (`--base base`), the **nova** style
+  (`base-nova` in `components.json`), **RTL** on.
+- **Every component**, in `src/components/ui/`: the classes written out in
+  full, already in their logical, RTL-ready form (`ms-*`, `pe-*`, `start-*`,
+  `rtl:` variants) — so a class here can be compared with ours as it is.
+- The theme: `src/styles.css`.
 
-To add components to your app, run the following command:
+## Made with
 
-```bash
-npx shadcn@latest add button
+```sh
+npx shadcn@latest create --template start --rtl --base base --preset nova --no-monorepo --name shadcn-reference -y
+cd shadcn-reference
+npx shadcn@latest add --all -y -o
 ```
 
-This will place the ui components in the `components` directory.
+`setup.sh` runs the same from scratch.
 
-## Using components
+## Refresh
 
-To use the components in your app, import them as follows:
+Inside the folder, to take shadcn's latest:
 
-```tsx
-import { Button } from "@/components/ui/button";
+```sh
+npx shadcn@latest add --all -y -o
 ```
+
+Then `git diff` shows what upstream changed.
